@@ -1,4 +1,3 @@
-
 import 'package:clean_architecture/Features/home/presentation/views/book_details_view.dart';
 import 'package:clean_architecture/Features/home/presentation/views/home_view.dart';
 import 'package:clean_architecture/Features/search/presentation/views/search_view.dart';
