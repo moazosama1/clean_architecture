@@ -1,8 +1,9 @@
+import 'package:clean_architecture/Features/home/presentation/views/widgets/best_seller_list_view_bloc_builder.dart';
+import 'package:clean_architecture/Features/home/presentation/views/widgets/featured_books_list_view_bloc_builder.dart';
 import 'package:clean_architecture/core/utils/styles.dart';
 import 'package:flutter/material.dart';
-import 'best_seller_list_view.dart';
+
 import 'custom_app_bar.dart';
-import 'featured_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({Key? key}) : super(key: key);
@@ -21,7 +22,7 @@ class HomeViewBody extends StatelessWidget {
                     horizontal: 30,
                   ),
                   child: CustomAppBar()),
-              FeaturedBooksListView(),
+              FeaturedBooksListViewBlocConsumer(),
               SizedBox(
                 height: 50,
               ),
@@ -38,7 +39,10 @@ class HomeViewBody extends StatelessWidget {
             ],
           ),
         ),
-        BestSellerListView()
+        SliverFillRemaining(
+          fillOverscroll: true,
+          child: BestSellerListViewBlocBuilder(),
+        )
       ],
     );
   }

@@ -3,6 +3,8 @@ import 'package:clean_architecture/core/errors/failure.dart';
 import 'package:either_dart/either.dart';
 
 abstract class HomeRepo {
-  Future<Either<Failure, List<BookEntities>>> fetchFeaturedBooks();
-  Future<Either<Failure, List<BookEntities>>> fetchNewestBooks();
+  Future<Either<Failure, List<BookEntities>>> fetchFeaturedBooks(
+      {required int pageNumber});
+  Future<Either<Failure, List<BookEntities>>> fetchNewestBooks(
+      {required int pageNumber});
 }
